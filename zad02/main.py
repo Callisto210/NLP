@@ -12,9 +12,10 @@ from elasticsearch.exceptions import TransportError
 
 def load_json():
     for filename in listdir('data'):
-            if filename.endswith('.json'):
-                with open(join('data/', filename), 'r') as open_file:
-                    yield json.load(open_file)
+        print(filename)
+        if filename.endswith('.json'):
+            with open(join('data/', filename), 'r') as open_file:
+                yield json.load(open_file)
 
 def main():
     es = Elasticsearch([{'host': '172.17.0.2', 'port':9200}])
@@ -25,10 +26,10 @@ def main():
             #'index.mapper.dynamic': False,
             'analysis': {
                 'analyzer': {
-                    'morfilogik_based_analyzer': {
+                    'polish': {
                         'type': 'custom',
                         'tokenizer': 'standard',
-                        'filter': ['morfologik_stem']
+                        'filter': ['lowercase', 'morfologik_stem']
                     }
                 }
             }
@@ -46,18 +47,12 @@ def main():
                         }
                     }]
                 },
-                'judgement': {
+                '_doc': {
                     'properties': {
-                        'items': {'type': 'object',
-                                  'properties': {
-                                    'textContent': {'type': 'text'},
-                                    'judgmentDate': {'type': 'date'},
-                                    'courtCases': {'type': 'object',
-                                                   'properties': {'caseNumber': {'type': 'keyword'}}},
-                                    'judges': {'type': 'object',
-                                                'properties': {'name': {'type': 'text'}}}
-                                  }
-                        }
+                        'items.textContent': {'type': 'text', 'analyzer': 'polish'},
+                        'items.judgmentDate': {'type': 'date'},
+                        'items.courtCases.caseNumber': {'type': 'keyword'},
+                        'items.judges.name': {'type': 'keyword'}
                     }
                 }
             }
@@ -65,33 +60,73 @@ def main():
 
     try:
         es.indices.create(index = 'cases', body = settings)
+        helpers.bulk(es, load_json(), index='cases', doc_type='_doc')
     except TransportError as e:
         if e.error == 'resource_already_exists_exception':
             pass
         else:
             raise
 
-    helpers.bulk(es, load_json(), index='cases', doc_type='judgement')
 
     count_harm = {
           'query': {
-            'query_string': {
-              'fields': [
-                'textContent'
-              ],
-              'query': '\'szkoda\''
+            'match': {
+              'items.textContent': 'szkoda'
             }
-          },  
-          'aggs' : {
-            'my-terms' : {
-                'terms' : {
-                    'field' : 'textContent'
+          }
+    }
+
+    res = es.search(index='cases', doc_type='_doc', body=count_harm, size=0)
+    print ('Ilość słów szkoda: ' + str(res['hits']['total']))
+
+    phrase = {
+        'query': {
+            'match_phrase': {
+                'items.textContent': 'trwały uszczerbek na zdrowiu'
+            }
+        }
+    }
+
+    res = es.search(index='cases', doc_type='_doc', body=phrase, size=0)
+    print ('Ilość uszczerbków na zdrowiu: ' + str(res['hits']['total']))
+
+    phrase2 = {
+        'query': {
+            'match_phrase': {
+                'items.textContent': {
+                    'query': 'trwały uszczerbek na zdrowiu',
+                    'slop': 4
                 }
             }
         }
     }
-    res = es.search(index='cases', doc_type='judgement', body=count_harm, size=100)
-    print (res)
 
+    res = es.search(index='cases', doc_type='_doc', body=phrase2, size=0)
+    print ('Ilośc uszczerbków na zdrowiu (z 2 słowami): ' + str(res['hits']['total']))
+
+    top3 = {
+        'aggs': {
+            'names': {
+                'terms': {'field': 'items.judges.name'}
+            }
+        }
+    }
+
+    res = es.search(index='cases', doc_type='_doc', body=top3, size=0)
+    print ('Top3 sędziowie: ' + str(res))
+
+    cnt = {
+        'aggs': {
+            'monthly': {
+                'date_histogram': {
+                    'field': 'items.judgmentDate',
+                    'interval': 'month'
+                }
+            }
+        }
+    }
+
+    res = es.search(index='cases', doc_type='_doc', body=cnt, size=0)
+    print ('Orzeczeń miesięcznie: ' + str(res))
 if __name__ == '__main__':
     sys.exit(main())
