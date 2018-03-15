@@ -9,8 +9,12 @@ import itertools
 
 import nltk
 from bs4 import BeautifulSoup
+from nltk.corpus.reader.nkjp import NKJPCorpusReader
 
 def main():
+#    pl_corp = NKJPCorpusReader(root='/home/patryk/NLP/zad03/nkjp/', fileids='')
+#    pl_dict = dict.fromkeys(pl_corp.words(), None)
+    freqlist = []
     only_letters = re.compile(r'[\W\d]+')
     filenames = [f for f in listdir('data/') if isfile(join('data/', f)) and
                     re.match(r'judgments-\d+\.json', f) is not None]
@@ -22,16 +26,19 @@ def main():
             try:
                 if datetime.datetime.strptime(judgment['judgmentDate'], "%Y-%m-%d").year == 2005:
                     cleaned = BeautifulSoup(judgment['textContent'], 'lxml').get_text()
-                    tokens = nltk.tokenize.word_tokenize(cleaned)
-                    wonum = list(itertools.filterfalse(only_letters.match, tokens))
-                    freq = nltk.FreqDist(wonum)
-                    for key, val in freq.items():
-                        print (str(key) + " : " + str(val))
-                    break
+                    tokens = [word.lower() for word in nltk.tokenize.word_tokenize(cleaned)]
+                    freqlist = freqlist + tokens
+                    #break
             except KeyError:
                 pass
         f.close()
-        break
+        #break
+
+    freqlistcleaned = list(itertools.filterfalse(only_letters.match, freqlist))
+    freq = nltk.FreqDist(freqlistcleaned)
+    for key, val in freq.items():
+        print (str(key) + " : " + str(val))
+    print(freq.most_common(30))
 
 if __name__ == '__main__':
     sys.exit(main())
