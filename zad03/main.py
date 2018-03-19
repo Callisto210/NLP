@@ -50,7 +50,7 @@ def main():
 #    pl_corp = NKJPCorpusReader(root='/home/patryk/NLP/zad03/nkjp/', fileids='')
 #    pl_dict = dict.fromkeys(pl_corp.words(), None)
     freqlist = []
-    only_letters = re.compile(r'^[a-zA-Ząćęłńóśźż]+$')
+    only_letters = re.compile(r'^[a-zA-Ząćęłńóśźż]{2,}$')
 
     filenames = [f for f in listdir('data/') if isfile(join('data/', f)) and
                     re.match(r'judgments-\d+\.json', f) is not None]
