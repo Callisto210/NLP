@@ -14,42 +14,10 @@ import nltk
 from nltk.corpus.reader.nkjp import NKJPCorpusReader
 
 from collections import Counter
-
-WORDS = Counter()
-N = 0
-
-def P(word): 
-    return WORDS[word] / N
-
-def correction(word): 
-    return max(candidates(word), key=P)
-
-def candidates(word):
-    cand = set([word])
-    cand.update(edits1(word))
-    cand.update(edits2(word))
-    return (known(cand))
-
-def known(words):
-    return set(w for w in words if w in WORDS)
-
-def edits1(word):
-    letters    = 'aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż'
-    splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
-    deletes    = [L + R[1:]               for L, R in splits if R]
-    transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
-    replaces   = [L + c + R[1:]           for L, R in splits if R for c in letters]
-    inserts    = [L + c + R               for L, R in splits for c in letters]
-    return set(deletes + transposes + replaces + inserts)
-
-def edits2(word): 
-    return (e2 for e1 in edits1(word) for e2 in edits1(e1))
+from math import log10
 
 def main():
-    global N
-#    pl_corp = NKJPCorpusReader(root='/home/patryk/NLP/zad03/nkjp/', fileids='')
-#    pl_dict = dict.fromkeys(pl_corp.words(), None)
-    freqlist = []
+    all_bigrams = []
     only_letters = re.compile(r'^[a-zA-Ząćęłńóśźż]+$')
 
     filenames = [f for f in listdir('data/') if isfile(join('data/', f)) and
@@ -66,38 +34,32 @@ def main():
                     cleaned = re.sub('<[^>]*>', '', cleaned)
                     tokens = [word.lower() for word in nltk.tokenize.word_tokenize(cleaned)]
                     tokens = list(filter(only_letters.match, tokens))
-                    bigrams = list(map(lambda (x, y): x + " " + y), zip(tokens, tokens[-1:]))
-                    freqlist = freqlist + tokens
+                    bigrams = list(zip(tokens, tokens[1:]))
+                    all_bigrams = all_bigrams + bigrams
                     break
             except KeyError:
                 pass
         f.close()
         break
 
-    freq = Counter(freqlist)
-    WORDS.update(freq)
-    N = sum(WORDS.values())
+    #Load unigrams
+    uni = open('uni_full.txt')
+    reader = csv.reader(uni, delimiter=',')
+    tup = [(row[0], int(row[1])) for row in reader]
+    unigrams = dict(tup)
 
-    for key, val in freq.most_common():
-        print (str(key) + " - " + str(val))
+    unigrams_n = sum(unigrams.values())
 
-    [w, k] = zip(*freq.most_common(30))
+    #Count bigrams
+    bigrams_cnt = Counter(all_bigrams)
+    bigrams_cnt_n = sum(bigrams_cnt.values())
 
-    plt.subplot(1,1,1)
-    plt.bar(np.arange(len(w)), k, 1/1.5, log=True)
-    plt.xticks(np.arange(len(w)), w, rotation='vertical')
-    plt.grid(True)
-    plt.show()
+    #Obtain PMI
+    pmi = list(map(lambda x: (x[0], log10((x[1]/bigrams_cnt_n)/((unigrams[x[0][0]]/unigrams_n)*(unigrams[x[0][0]]/unigrams_n)))), bigrams_cnt.most_common()))
 
-    polimorf = open('polimorfologik-2.1.txt')
-    reader = csv.reader(polimorf, delimiter=';')
-    slowar = [row[1].lower() for row in reader]
+    pmi_top = sorted(pmi, key=lambda x: x[1], reverse=True)[:30]
+    print (pmi_top)
 
-    polimorf_dict = set(slowar)
-
-    for key, val in freq.items():
-        if str(key) not in polimorf_dict:
-            print (str(key) + " -> " + correction(str(key)))
 
 if __name__ == '__main__':
     sys.exit(main())
