@@ -78,13 +78,12 @@ def main():
     N = sum(WORDS.values())
 
     for key, val in freq.most_common():
-        print (str(key) + " - " + str(val))
+        print (str(key) + "," + str(val))
 
     [w, k] = zip(*freq.most_common(30))
 
     plt.subplot(1,1,1)
-    plt.bar(np.arange(len(w)), k, 1/1.5, log=True)
-    plt.xticks(np.arange(len(w)), w, rotation='vertical')
+    plt.loglog(np.arange(len(w)), k)
     plt.grid(True)
     plt.show()
 
