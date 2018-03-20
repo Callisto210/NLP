@@ -57,7 +57,7 @@ def main():
     for name in filenames:
         f = open(join('data/', name), 'r')
         judgments = json.load(f)['items']
-        print(name)
+       # print(name)
         for judgment in judgments:
             try:
                 if datetime.datetime.strptime(judgment['judgmentDate'], "%Y-%m-%d").year == 2005:
