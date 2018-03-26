@@ -55,11 +55,11 @@ def main():
                     tokens = list(filter(only_letters.match, tokens))
                     bigrams = list(zip(tokens, tokens[1:]))
                     all_bigrams = all_bigrams + bigrams
-                    break
+                    #break
             except KeyError:
                 pass
         f.close()
-        break
+        #break
 
     #Load unigrams
     uni = open('uni_full.txt')
