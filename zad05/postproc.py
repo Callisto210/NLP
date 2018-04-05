@@ -45,8 +45,9 @@ def main():
         if line.startswith('\t'):
             if 'interp' not in line:
                 w, t, *_ = line.split()
-                cat = t.split(':')[0]
-                pairs.append((w.lower() + ":" + cat))
+                if only_letters.match(w.lower()):
+                    cat = t.split(':')[0]
+                    pairs.append((w.lower() + ":" + cat))
 
     all_bigrams = list(zip(pairs, pairs[1:]))
 
