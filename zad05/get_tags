@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for file in *_preproc.txt; do
+	curl -XPOST localhost:9200 -T $file >> tags.txt
+done
