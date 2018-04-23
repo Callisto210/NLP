@@ -1,0 +1,263 @@
+AC judgments: 1287
+AU judgments: 166
+AK judgments: 331
+G judgments: 219
+AP judgments: 600
+R judgments: 116
+W judgments: 158
+Am judgments: 152
+Training:
+Group: Am Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.8min finished
+Group: Am Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.1min finished
+Group: AC Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.7min finished
+Group: AC Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.3min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.1min finished
+Group: R Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.6min finished
+Group: R Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.1min finished
+Group: AK Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.6min finished
+Group: AK Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.1min finished
+Group: AU Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.6min finished
+Group: AU Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.0min finished
+Group: W Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.6min finished
+Group: W Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.1min finished
+Group: G Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.7min finished
+Group: G Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.3min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.1min finished
+Group: AP Declined forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.7min finished
+Group: AP Basic forms
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=8)]: Done 108 out of 108 | elapsed:  4.1min finished
+Testing:
+Group: Am Declined forms
+Words: 314649
+TP: 36 TN: 712 FP: 2 FN: 1
+Precision: 0.947368421053 Recall: 0.972972972973 F1: 0.96
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00       714
+       True       0.95      0.97      0.96        37
+
+avg / total       1.00      1.00      1.00       751
+
+Group: Am Basic forms
+Words: 314649
+TP: 36 TN: 712 FP: 2 FN: 1
+Precision: 0.947368421053 Recall: 0.972972972973 F1: 0.96
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00       714
+       True       0.95      0.97      0.96        37
+
+avg / total       1.00      1.00      1.00       751
+
+Group: AC Declined forms
+Words: 1116745
+TP: 297 TN: 398 FP: 32 FN: 24
+Precision: 0.90273556231 Recall: 0.92523364486 F1: 0.913846153846
+             precision    recall  f1-score   support
+
+      False       0.94      0.93      0.93       430
+       True       0.90      0.93      0.91       321
+
+avg / total       0.93      0.93      0.93       751
+
+Group: AC Basic forms
+Words: 1116745
+TP: 292 TN: 396 FP: 34 FN: 29
+Precision: 0.895705521472 Recall: 0.909657320872 F1: 0.902627511592
+             precision    recall  f1-score   support
+
+      False       0.93      0.92      0.93       430
+       True       0.90      0.91      0.90       321
+
+avg / total       0.92      0.92      0.92       751
+
+Group: R Declined forms
+Words: 150463
+TP: 25 TN: 721 FP: 2 FN: 3
+Precision: 0.925925925926 Recall: 0.892857142857 F1: 0.909090909091
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00       723
+       True       0.93      0.89      0.91        28
+
+avg / total       0.99      0.99      0.99       751
+
+Group: R Basic forms
+Words: 150463
+TP: 26 TN: 720 FP: 3 FN: 2
+Precision: 0.896551724138 Recall: 0.928571428571 F1: 0.912280701754
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00       723
+       True       0.90      0.93      0.91        28
+
+avg / total       0.99      0.99      0.99       751
+
+Group: AK Declined forms
+Words: 469430
+postproc.py:147: RuntimeWarning: invalid value encountered in long_scalars
+  prec = tp/(tp+fp)
+TP: 0 TN: 669 FP: 0 FN: 82
+Precision: nan Recall: 0.0 F1: nan
+/home/patryk/.local/lib64/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+             precision    recall  f1-score   support
+
+      False       0.89      1.00      0.94       669
+       True       0.00      0.00      0.00        82
+
+avg / total       0.79      0.89      0.84       751
+
+Group: AK Basic forms
+Words: 469430
+postproc.py:168: RuntimeWarning: invalid value encountered in long_scalars
+  prec = tp/(tp+fp)
+TP: 0 TN: 669 FP: 0 FN: 82
+Precision: nan Recall: 0.0 F1: nan
+             precision    recall  f1-score   support
+
+      False       0.89      1.00      0.94       669
+       True       0.00      0.00      0.00        82
+
+avg / total       0.79      0.89      0.84       751
+
+Group: AU Declined forms
+Words: 191332
+TP: 37 TN: 708 FP: 2 FN: 4
+Precision: 0.948717948718 Recall: 0.90243902439 F1: 0.925
+             precision    recall  f1-score   support
+
+      False       0.99      1.00      1.00       710
+       True       0.95      0.90      0.92        41
+
+avg / total       0.99      0.99      0.99       751
+
+Group: AU Basic forms
+Words: 191332
+TP: 35 TN: 708 FP: 2 FN: 6
+Precision: 0.945945945946 Recall: 0.853658536585 F1: 0.897435897436
+             precision    recall  f1-score   support
+
+      False       0.99      1.00      0.99       710
+       True       0.95      0.85      0.90        41
+
+avg / total       0.99      0.99      0.99       751
+
+Group: W Declined forms
+Words: 118327
+TP: 36 TN: 702 FP: 10 FN: 3
+Precision: 0.782608695652 Recall: 0.923076923077 F1: 0.847058823529
+             precision    recall  f1-score   support
+
+      False       1.00      0.99      0.99       712
+       True       0.78      0.92      0.85        39
+
+avg / total       0.98      0.98      0.98       751
+
+Group: W Basic forms
+Words: 118327
+TP: 36 TN: 704 FP: 8 FN: 3
+Precision: 0.818181818182 Recall: 0.923076923077 F1: 0.867469879518
+             precision    recall  f1-score   support
+
+      False       1.00      0.99      0.99       712
+       True       0.82      0.92      0.87        39
+
+avg / total       0.99      0.99      0.99       751
+
+Group: G Declined forms
+Words: 382308
+TP: 36 TN: 696 FP: 1 FN: 18
+Precision: 0.972972972973 Recall: 0.666666666667 F1: 0.791208791209
+             precision    recall  f1-score   support
+
+      False       0.97      1.00      0.99       697
+       True       0.97      0.67      0.79        54
+
+avg / total       0.97      0.97      0.97       751
+
+Group: G Basic forms
+Words: 382308
+TP: 38 TN: 696 FP: 1 FN: 16
+Precision: 0.974358974359 Recall: 0.703703703704 F1: 0.817204301075
+             precision    recall  f1-score   support
+
+      False       0.98      1.00      0.99       697
+       True       0.97      0.70      0.82        54
+
+avg / total       0.98      0.98      0.98       751
+
+Group: AP Declined forms
+Words: 740667
+TP: 0 TN: 602 FP: 0 FN: 149
+Precision: nan Recall: 0.0 F1: nan
+             precision    recall  f1-score   support
+
+      False       0.80      1.00      0.89       602
+       True       0.00      0.00      0.00       149
+
+avg / total       0.64      0.80      0.71       751
+
+Group: AP Basic forms
+Words: 740667
+TP: 0 TN: 602 FP: 0 FN: 149
+Precision: nan Recall: 0.0 F1: nan
+             precision    recall  f1-score   support
+
+      False       0.80      1.00      0.89       602
+       True       0.00      0.00      0.00       149
+
+avg / total       0.64      0.80      0.71       751
+
+Declined forms:
+MICRO: Precision: 0.90503875969 Recall: 0.621837549933 F1: 0.737174427782
+MACRO: Precision: nan Recall: 0.660405796853 F1: nan
+Basic forms:
+MICRO: Precision: 0.90253411306 Recall: 0.616511318242 F1: 0.732594936709
+MACRO: Precision: nan Recall: 0.661455110723 F1: nan
+
