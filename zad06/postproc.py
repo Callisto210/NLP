@@ -119,7 +119,7 @@ def main():
         print ('Train: ' + str(train_cnt) + ' Test: ' + str(test_cnt))
 
     print('Training:')
-    for k, c in [('AP', classifiers['AP'])]:#classifiers.items():
+    for k, c in classifiers.items():
         print ('Group: ' + k + ' Declined forms')
         [train_x, train_y] = zip(*train_all_normal)
         train_x = list(train_x)
@@ -133,7 +133,6 @@ def main():
                 f += 1
         print ('True: ' + str(t) + ' False: ' + str(f))
         c[0].fit(train_x, train_y)
-        break
 
         print ('Group: ' + k + ' Basic forms')
         [train_x, train_y] = zip(*train_all_basic)
@@ -153,7 +152,7 @@ def main():
     bas = [0, 0, 0, 0, 0]
 
     print('Testing:')
-    for k, c in [('AP', classifiers['AP'])]:#classifiers.items():
+    for k, c in classifiers.items():
         [test_x, test_y] = zip(*test_all_normal)
         test_x = list(test_x)
         print('Length test_x: ' + str(len(test_x)))
@@ -184,7 +183,6 @@ def main():
         print ('Precision: ' + str(prec) + ' Recall: ' + str(rec) + ' F1: ' + str(f1))
 
         print (classification_report(test_y, predict))
-        break
 
         [test_x, test_y] = zip(*test_all_basic)
         test_x = list(test_x)
