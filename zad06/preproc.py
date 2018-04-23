@@ -66,7 +66,7 @@ def main():
         ok = True
         for group in groups:
             print(group[0] + ": " + str(group[4]))
-            if group[4] < 100:
+            if group[4] < 300:
                 ok = False
             else:
                 group[5] = False

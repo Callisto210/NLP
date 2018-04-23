@@ -30,16 +30,18 @@ from sklearn.metrics import average_precision_score
 from sklearn.metrics import confusion_matrix
 
 def get_words(lem):
-    norm = []
-    basic = []
+    norm = ''
+    basic = ''
+    cnt = 0
     for line in lem.split('\n'):
         if line != '':
             w, *_ = line.split()
             if line.startswith('\t') == False:
-                norm.append(w)
+                norm = norm + ' ' + w
+                cnt += 1
             else:
-                basic.append(w)
-    return (norm, basic)
+                basic = basic + ' ' + w
+    return (norm, basic, cnt)
 
 def main():
 #    groups = [
@@ -99,42 +101,74 @@ def main():
         random.shuffle(judgments_lem)
         train = judgments_lem[:int((len(judgments_lem)+1)*.75)]
         test = judgments_lem[int((len(judgments_lem))*.75+1):]
+        train_cnt = 0
+        test_cnt = 0
 
         for lem in train:
-            (n, b) = get_words(lem)
-            classifiers[group[0]][2] += len(n)
-            train_all_normal += list(map(lambda x: (x, group[0]), n))
-            train_all_basic += list(map(lambda x: (x, group[0]), b))
+            (n, b, c) = get_words(lem)
+            classifiers[group[0]][2] += c
+            train_all_normal.append((n, group[0]))
+            train_all_basic.append((b, group[0]))
+            train_cnt += 1
         
         for lem in test:
-            (n, b) = get_words(lem)
-            test_all_normal += list(map(lambda x: (x, group[0]), n))
-            test_all_basic += list(map(lambda x: (x, group[0]), b))
+            (n, b, _) = get_words(lem)
+            test_all_normal.append((n, group[0]))
+            test_all_basic.append((b, group[0]))
+            test_cnt += 1
+        print ('Train: ' + str(train_cnt) + ' Test: ' + str(test_cnt))
 
     print('Training:')
-    for k, c in classifiers.items():
+    for k, c in [('AP', classifiers['AP'])]:#classifiers.items():
         print ('Group: ' + k + ' Declined forms')
         [train_x, train_y] = zip(*train_all_normal)
         train_x = list(train_x)
         train_y = list(map(lambda x: True if x == k else False, list(train_y)))
+        t = 0
+        f = 0
+        for y in train_y:
+            if y:
+                t += 1
+            else:
+                f += 1
+        print ('True: ' + str(t) + ' False: ' + str(f))
         c[0].fit(train_x, train_y)
+        break
 
         print ('Group: ' + k + ' Basic forms')
         [train_x, train_y] = zip(*train_all_basic)
         train_x = list(train_x)
         train_y = list(map(lambda x: True if x == k else False, list(train_y)))
+        t = 0
+        f = 0
+        for y in train_y:
+            if y:
+                t += 1
+            else:
+                f += 1
+        print ('True: ' + str(t) + ' False: ' + str(f))
         c[1].fit(train_x, train_y)
 
     dec = [0, 0, 0, 0, 0]
     bas = [0, 0, 0, 0, 0]
 
     print('Testing:')
-    for k, c in classifiers.items():
+    for k, c in [('AP', classifiers['AP'])]:#classifiers.items():
         [test_x, test_y] = zip(*test_all_normal)
         test_x = list(test_x)
+        print('Length test_x: ' + str(len(test_x)))
         test_y = list(map(lambda x: True if x == k else False, list(test_y)))
+        t = 0
+        f = 0
+        for y in test_y:
+            if y:
+                t += 1
+            else:
+                f += 1
+        print ('True: ' + str(t) + ' False: ' + str(f))
         best = c[0].best_estimator_
         predict = best.predict(test_x)
+        print ('Length test_y: ' + str(len(test_y)) + ' predict: ' + str(len(predict)))
         print ('Group: ' + k + ' Declined forms')
         print ('Words: ' + str(c[2]))
         tn, fp, fn, tp = confusion_matrix(test_y, predict).ravel()
@@ -150,12 +184,23 @@ def main():
         print ('Precision: ' + str(prec) + ' Recall: ' + str(rec) + ' F1: ' + str(f1))
 
         print (classification_report(test_y, predict))
+        break
 
         [test_x, test_y] = zip(*test_all_basic)
         test_x = list(test_x)
+        print('Length test_x: ' + str(len(test_x)))
         test_y = list(map(lambda x: True if x == k else False, list(test_y)))
+        t = 0
+        f = 0
+        for y in test_y:
+            if y:
+                t += 1
+            else:
+                f += 1
+        print ('True: ' + str(t) + ' False: ' + str(f))
         best = c[1].best_estimator_
         predict = best.predict(test_x)
+        print ('Length test_y: ' + str(len(test_y)) + ' predict: ' + str(len(predict)))
         print ('Group: ' + k + ' Basic forms')
         print ('Words: ' + str(c[2]))
         tn, fp, fn, tp = confusion_matrix(test_y, predict).ravel()
