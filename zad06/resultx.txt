@@ -1,0 +1,296 @@
+AC judgments: 1287
+Train: 966 Test: 321
+AU judgments: 351
+Train: 264 Test: 87
+AK judgments: 331
+Train: 249 Test: 82
+G judgments: 1681
+Train: 1261 Test: 420
+AP judgments: 586
+Train: 440 Test: 146
+R judgments: 509
+Train: 382 Test: 127
+W judgments: 503
+Train: 378 Test: 125
+Am judgments: 349
+Train: 262 Test: 87
+Training:
+Group: AU Declined forms
+True: 264 False: 3938
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: AU Basic forms
+True: 264 False: 3938
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: AP Declined forms
+True: 440 False: 3762
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: AP Basic forms
+True: 440 False: 3762
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: AC Declined forms
+True: 966 False: 3236
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: AC Basic forms
+True: 966 False: 3236
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: R Declined forms
+True: 382 False: 3820
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: R Basic forms
+True: 382 False: 3820
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: Am Declined forms
+True: 262 False: 3940
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: Am Basic forms
+True: 262 False: 3940
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: AK Declined forms
+True: 249 False: 3953
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: AK Basic forms
+True: 249 False: 3953
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: G Declined forms
+True: 1261 False: 2941
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: G Basic forms
+True: 1261 False: 2941
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: W Declined forms
+True: 378 False: 3824
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Group: W Basic forms
+True: 378 False: 3824
+Fitting 2 folds for each of 54 candidates, totalling 108 fits
+Testing:
+Length test_x: 1395
+True: 87 False: 1308
+Length test_y: 1395 predict: 1395
+Group: AU Declined forms
+Words: 418551
+TP: 78 TN: 1305 FP: 3 FN: 9
+Precision: 0.962962962963 Recall: 0.896551724138 F1: 0.928571428571
+             precision    recall  f1-score   support
+
+      False       0.99      1.00      1.00      1308
+       True       0.96      0.90      0.93        87
+
+avg / total       0.99      0.99      0.99      1395
+
+Length test_x: 1395
+True: 87 False: 1308
+Length test_y: 1395 predict: 1395
+Group: AU Basic forms
+Words: 418551
+TP: 80 TN: 1305 FP: 3 FN: 7
+Precision: 0.963855421687 Recall: 0.919540229885 F1: 0.941176470588
+             precision    recall  f1-score   support
+
+      False       0.99      1.00      1.00      1308
+       True       0.96      0.92      0.94        87
+
+avg / total       0.99      0.99      0.99      1395
+
+Length test_x: 1395
+True: 146 False: 1249
+Length test_y: 1395 predict: 1395
+Group: AP Declined forms
+Words: 739372
+TP: 141 TN: 1247 FP: 2 FN: 5
+Precision: 0.986013986 Recall: 0.9657534247 F1: 0.975386981
+             precision    recall  f1-score   support
+
+      False       0.90      0.99      0.94      1249
+       True       0.98      0.96      0.97       146
+
+avg / total       0.92      0.99      0.95      1395
+
+Length test_x: 1395
+True: 146 False: 1249
+Length test_y: 1395 predict: 1395
+Group: AP Basic forms
+Words: 739372
+TP: 141 TN: 1247 FP: 2 FN: 5
+Precision: 0.986013986 Recall: 0.9657534247 F1: 0.975386981
+             precision    recall  f1-score   support
+
+      False       0.90      0.99      0.94      1249
+       True       0.98      0.96      0.97       146
+
+avg / total       0.92      0.99      0.95      1395
+
+Length test_x: 1395
+True: 321 False: 1074
+Length test_y: 1395 predict: 1395
+Group: AC Declined forms
+Words: 1115365
+TP: 292 TN: 1055 FP: 19 FN: 29
+Precision: 0.938906752412 Recall: 0.909657320872 F1: 0.924050632911
+             precision    recall  f1-score   support
+
+      False       0.97      0.98      0.98      1074
+       True       0.94      0.91      0.92       321
+
+avg / total       0.97      0.97      0.97      1395
+
+Length test_x: 1395
+True: 321 False: 1074
+Length test_y: 1395 predict: 1395
+Group: AC Basic forms
+Words: 1115365
+TP: 289 TN: 1054 FP: 20 FN: 32
+Precision: 0.935275080906 Recall: 0.90031152648 F1: 0.91746031746
+             precision    recall  f1-score   support
+
+      False       0.97      0.98      0.98      1074
+       True       0.94      0.90      0.92       321
+
+avg / total       0.96      0.96      0.96      1395
+
+Length test_x: 1395
+True: 127 False: 1268
+Length test_y: 1395 predict: 1395
+Group: R Declined forms
+Words: 690228
+TP: 125 TN: 1266 FP: 2 FN: 2
+Precision: 0.984251968504 Recall: 0.984251968504 F1: 0.984251968504
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00      1268
+       True       0.98      0.98      0.98       127
+
+avg / total       1.00      1.00      1.00      1395
+
+Length test_x: 1395
+True: 127 False: 1268
+Length test_y: 1395 predict: 1395
+Group: R Basic forms
+Words: 690228
+TP: 125 TN: 1264 FP: 4 FN: 2
+Precision: 0.968992248062 Recall: 0.984251968504 F1: 0.9765625
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00      1268
+       True       0.97      0.98      0.98       127
+
+avg / total       1.00      1.00      1.00      1395
+
+Length test_x: 1395
+True: 87 False: 1308
+Length test_y: 1395 predict: 1395
+Group: Am Declined forms
+Words: 752722
+TP: 85 TN: 1304 FP: 4 FN: 2
+Precision: 0.955056179775 Recall: 0.977011494253 F1: 0.965909090909
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00      1308
+       True       0.96      0.98      0.97        87
+
+avg / total       1.00      1.00      1.00      1395
+
+Length test_x: 1395
+True: 87 False: 1308
+Length test_y: 1395 predict: 1395
+Group: Am Basic forms
+Words: 752722
+TP: 84 TN: 1304 FP: 4 FN: 3
+Precision: 0.954545454545 Recall: 0.965517241379 F1: 0.96
+             precision    recall  f1-score   support
+
+      False       1.00      1.00      1.00      1308
+       True       0.95      0.97      0.96        87
+
+avg / total       1.00      0.99      0.99      1395
+
+Length test_x: 1395
+True: 82 False: 1313
+Length test_y: 1395 predict: 1395
+Group: AK Declined forms
+Words: 482339
+TP: 81 TN: 1311 FP: 2 FN: 1
+Precision: 0.9759036145 Recall: 0.987804878 F1: 0.9809633028
+             precision    recall  f1-score   support
+
+      False       0.94      1.00      0.97      1313
+       True       0.98      0.99      0.98        82
+
+avg / total       0.94      0.99      0.97      1395
+
+Length test_x: 1395
+True: 82 False: 1313
+Length test_y: 1395 predict: 1395
+Group: AK Basic forms
+Words: 482339
+TP: 81 TN: 1311 FP: 2 FN: 1
+Precision: 0.9759036145 Recall: 0.987804878 F1: 0.9809633028
+             precision    recall  f1-score   support
+
+      False       0.94      1.00      0.97      1313
+       True       0.98      0.99      0.98        82
+
+avg / total       0.94      0.99      0.97      1395
+
+Length test_x: 1395
+True: 420 False: 975
+Length test_y: 1395 predict: 1395
+Group: G Declined forms
+Words: 3042183
+TP: 378 TN: 967 FP: 8 FN: 42
+Precision: 0.979274611399 Recall: 0.9 F1: 0.937965260546
+             precision    recall  f1-score   support
+
+      False       0.96      0.99      0.97       975
+       True       0.98      0.90      0.94       420
+
+avg / total       0.96      0.96      0.96      1395
+
+Length test_x: 1395
+True: 420 False: 975
+Length test_y: 1395 predict: 1395
+Group: G Basic forms
+Words: 3042183
+TP: 385 TN: 967 FP: 8 FN: 35
+Precision: 0.979643765903 Recall: 0.916666666667 F1: 0.947109471095
+             precision    recall  f1-score   support
+
+      False       0.97      0.99      0.98       975
+       True       0.98      0.92      0.95       420
+
+avg / total       0.97      0.97      0.97      1395
+
+Length test_x: 1395
+True: 125 False: 1270
+Length test_y: 1395 predict: 1395
+Group: W Declined forms
+Words: 429802
+TP: 115 TN: 1269 FP: 1 FN: 10
+Precision: 0.991379310345 Recall: 0.92 F1: 0.954356846473
+             precision    recall  f1-score   support
+
+      False       0.99      1.00      1.00      1270
+       True       0.99      0.92      0.95       125
+
+avg / total       0.99      0.99      0.99      1395
+
+Length test_x: 1395
+True: 125 False: 1270
+Length test_y: 1395 predict: 1395
+Group: W Basic forms
+Words: 429802
+TP: 113 TN: 1267 FP: 3 FN: 12
+Precision: 0.974137931034 Recall: 0.904 F1: 0.9377593361
+             precision    recall  f1-score   support
+
+      False       0.99      1.00      0.99      1270
+       True       0.97      0.90      0.94       125
+
+avg / total       0.99      0.99      0.99      1395
+
+Declined forms:
+MICRO: Precision: 0.9666666667 Recall: 0.9283154122 F1: 0.9466187962
+MACRO: Precision: 0.9693113772 Recall: 0.9422565677 F1: 0.9553092622
+Basic forms:
+MICRO: Precision: 0.9624329159 Recall: 0.9317629876 F1: 0.9462461701
+MACRO: Precision: 0.9654376543 Recall: 0.9234566544 F1: 0.9435328391
