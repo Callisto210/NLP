@@ -1,0 +1,44 @@
+Reading XML...
+PoS             #synsets        #word senses    #words
+Nouns           132398          176779          134778
+Verbs           27693           38564           19595
+Adjectives      11256           14035           8006
+Adverbs         0               0               0
+
+Synonimy
+PLWN-00003411-v  {szkoda:1, żałować:3, żal:1}  ()
+PLWN-00003675-n  {strata:1, utrata:1, szkoda:2, uszczerbek:1}  ()
+PLWN-00006533-n  {szkoda:1}  (brak danych)
+
+Domknięcie hiperonimów
+PLWN-00410902-n  {wypadek drogowy:1}  ()
+  PLWN-00410901-n  {wypadek komunikacyjny:1}  ()
+    PLWN-00003982-n  {wypadek:1}  ()
+      PLWN-00027419-n  {zdarzenie oceniane negatywnie:1}  (brak danych)
+        PLWN-00006526-n  {wydarzenie:1, wypadek:3, zdarzenie:2, historia:3}  ()
+
+
+Hiponimy "wypadek"
+PLWN-00003982-n  {wypadek:1}  ()
+  PLWN-00001284-n  {zderzenie:2, kraksa:1}  ()
+      PLWN-00235346-n  {czołówka:9, zderzenie czołowe:1}  ()
+      PLWN-00471555-n  {stłuczka:1}  ()
+  PLWN-00006486-n  {kolizja:2}  ()
+      PLWN-00441365-n  {kolizja drogowa:1}  ()
+  PLWN-00016131-n  {karambol:1}  ()
+  PLWN-00034688-n  {zawał:2}  ()
+      PLWN-00037295-n  {obwał:1}  ()
+  PLWN-00034689-n  {tąpnięcie:1}  ()
+  PLWN-00241026-n  {kapotaż:1}  ()
+  PLWN-00258639-n  {wykolejenie:2}  ()
+  PLWN-00389170-n  {zakrztuszenie:1, zachłyśnięcie:1, aspiracja:3}  ()
+  PLWN-00410901-n  {wypadek komunikacyjny:1}  ()
+      PLWN-00410902-n  {wypadek drogowy:1}  ()
+  PLWN-00411618-n  {katastrofa budowlana:1}  ()
+  PLWN-00436137-n  {wypadek jądrowy:1}  ()
+
+
+{0.9030899869919435: ('PLWN-00003675-n', 'PLWN-00003982-n', 'hyponym'), 1.0: ('PLWN-00003675-n', 'PLWN-00003982-n', 'hypernym'), 1.1249387366083: ('PLWN-00003675-n', 'PLWN-00003982-n', 'caused_by')}
+{0.8239087409443188: ('PLWN-00006486-n', 'PLWN-00472552-n', 'hypernym'), 1.0: ('PLWN-00006486-n', 'PLWN-00472552-n', 'hyponym'), 1.1249387366083: ('PLWN-00006486-n', 'PLWN-00472552-n', 'caused_by')}
+{0.6478174818886375: ('PLWN-00005640-n', 'PLWN-00411618-n', 'hypernym'), 1.0: ('PLWN-00005640-n', 'PLWN-00411618-n', 'hyponym'), 1.1249387366083: ('PLWN-00005640-n', 'PLWN-00411618-n', 'caused_by')}
+
