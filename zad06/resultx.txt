@@ -97,28 +97,28 @@ True: 146 False: 1249
 Length test_y: 1395 predict: 1395
 Group: AP Declined forms
 Words: 739372
-TP: 0 TN: 1249 FP: 0 FN: 146
-Precision: nan Recall: 0.0 F1: nan
+TP: 141 TN: 1247 FP: 2 FN: 5
+Precision: 0.986013986 Recall: 0.9657534247 F1: 0.975386981
              precision    recall  f1-score   support
 
-      False       0.90      1.00      0.94      1249
-       True       0.00      0.00      0.00       146
+      False       0.90      0.99      0.94      1249
+       True       0.98      0.96      0.97       146
 
-avg / total       0.80      0.90      0.85      1395
+avg / total       0.92      0.99      0.95      1395
 
 Length test_x: 1395
 True: 146 False: 1249
 Length test_y: 1395 predict: 1395
 Group: AP Basic forms
 Words: 739372
-TP: 0 TN: 1249 FP: 0 FN: 146
-Precision: nan Recall: 0.0 F1: nan
+TP: 141 TN: 1247 FP: 2 FN: 5
+Precision: 0.986013986 Recall: 0.9657534247 F1: 0.975386981
              precision    recall  f1-score   support
 
-      False       0.90      1.00      0.94      1249
-       True       0.00      0.00      0.00       146
+      False       0.90      0.99      0.94      1249
+       True       0.98      0.96      0.97       146
 
-avg / total       0.80      0.90      0.85      1395
+avg / total       0.92      0.99      0.95      1395
 
 Length test_x: 1395
 True: 321 False: 1074
@@ -209,28 +209,28 @@ True: 82 False: 1313
 Length test_y: 1395 predict: 1395
 Group: AK Declined forms
 Words: 482339
-TP: 0 TN: 1313 FP: 0 FN: 82
-Precision: nan Recall: 0.0 F1: nan
+TP: 81 TN: 1311 FP: 2 FN: 1
+Precision: 0.9759036145 Recall: 0.987804878 F1: 0.9809633028
              precision    recall  f1-score   support
 
       False       0.94      1.00      0.97      1313
-       True       0.00      0.00      0.00        82
+       True       0.98      0.99      0.98        82
 
-avg / total       0.89      0.94      0.91      1395
+avg / total       0.94      0.99      0.97      1395
 
 Length test_x: 1395
 True: 82 False: 1313
 Length test_y: 1395 predict: 1395
 Group: AK Basic forms
 Words: 482339
-TP: 0 TN: 1313 FP: 0 FN: 82
-Precision: nan Recall: 0.0 F1: nan
+TP: 81 TN: 1311 FP: 2 FN: 1
+Precision: 0.9759036145 Recall: 0.987804878 F1: 0.9809633028
              precision    recall  f1-score   support
 
       False       0.94      1.00      0.97      1313
-       True       0.00      0.00      0.00        82
+       True       0.98      0.99      0.98        82
 
-avg / total       0.89      0.94      0.91      1395
+avg / total       0.94      0.99      0.97      1395
 
 Length test_x: 1395
 True: 420 False: 975
@@ -289,8 +289,8 @@ Precision: 0.974137931034 Recall: 0.904 F1: 0.9377593361
 avg / total       0.99      0.99      0.99      1395
 
 Declined forms:
-MICRO: Precision: 0.966666666667 Recall: 0.76917562724 F1: 0.856686626747
-MACRO: Precision: nan Recall: 0.698434063471 F1: nan
+MICRO: Precision: 0.9666666667 Recall: 0.9283154122 F1: 0.9466187962
+MACRO: Precision: 0.9693113772 Recall: 0.9422565677 F1: 0.9553092622
 Basic forms:
-MICRO: Precision: 0.962432915921 Recall: 0.771326164875 F1: 0.856346995623
-MACRO: Precision: nan Recall: 0.698785954114 F1: nan
+MICRO: Precision: 0.9624329159 Recall: 0.9317629876 F1: 0.9462461701
+MACRO: Precision: 0.9654376543 Recall: 0.9234566544 F1: 0.9435328391
