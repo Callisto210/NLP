@@ -7,6 +7,8 @@ import re
 import datetime
 import itertools
 import csv
+import operator
+
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -68,7 +70,34 @@ def main():
         except KeyError:
             res_zgrd[key_s[0]+"_"+key_s[1]] = cnt
 
-    print (res_zgrd)
+    print ('100 najcześciej występujących wyrażeń')
+    top100 = sorted(res_dr.items(), key=operator.itemgetter(1), reverse=True)[:100]
+    print (top100)
+
+    print ('10 najczęściej występujących dla każdej zgrubenj kategorii')
+    for k in res_zgr.keys():
+        print (k)
+        top10 = sorted(res_zgr[k], key=operator.itemgetter(1), reverse=True)[:10]
+        print (top10)
+
+
+    #Drobnoziarnista
+#    xticks = list(list(zip(*res_d.items()))[0])
+#    y = list(list(zip(*res_d.items()))[1])
+#    x = list(range(0, len(y)))
+#    plt.xticks(x, xticks, rotation=70)
+#    plt.bar(x, y)
+#    plt.show()
+
+
+    #Bruboziarnista
+#    xticks = list(list(zip(*res_zgrd.items()))[0])
+#    y = list(list(zip(*res_zgrd.items()))[1])
+#    x = list(range(0, len(y)))
+#    plt.xticks(x, xticks, rotation=70)
+#    plt.bar(x, y)
+#    plt.show()
+
 
 if __name__ == '__main__':
     sys.exit(main())
