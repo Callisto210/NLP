@@ -1,0 +1,77 @@
+Z przecinkami, 1GB danych
+Sąd_Najwyższy: 
+[('Sąd_Najwyższy,', 0.7950838208198547),
+('Najwyższy', 0.7636445760726929),
+('Naczelny_Sąd_Administracyjny', 0.738476037979126)]
+
+Trybunał_Konstytucyjny: 
+[('Trybunał', 0.950397253036499),
+('Trybunał_Konstytucyjny,', 0.8450045585632324),
+('Trybunał,', 0.8202641606330872)]
+
+kodeks_cywilny: 
+[('Kodeks_cywilny', 0.8180645108222961),
+('ustawa_ta', 0.7752024531364441),
+('Kodeks_pracy', 0.7643789649009705)]
+
+kpk: 
+[('k.p.k.', 0.9181287884712219),
+('kpk,', 0.9095538258552551),
+('k.p.k.,', 0.8977554440498352)]
+
+sąd_rejonowy: 
+[('sąd_meriti', 0.9430674314498901),
+('sąd_I_instancji', 0.9211785197257996),
+('Sąd_meriti', 0.9127035140991211)]
+
+szkoda: 
+[('szkoda,', 0.7918054461479187),
+('powstała_szkoda', 0.779826283454895),
+('szkoda_ta', 0.7771686315536499)]
+
+wypadek:
+[('skutek', 0.6125534176826477),
+('moment', 0.5967228412628174),
+('przypadek', 0.5663102269172668)]
+
+kolizja: 
+[('usterka', 0.7478471994400024),
+('awaria', 0.7046135067939758),
+('akcja', 0.6950744986534119)]
+
+szkoda_majątkowa: 
+[('szkoda_niemajątkowa', 0.7971832752227783),
+('szkoda,', 0.7957642674446106),
+('krzywda', 0.7862070202827454)]
+
+nieszczęście: 
+[('trzask,', 0.6958078742027283),
+('„odpowiedniość”_sumy', 0.6913893222808838),
+('tchu,', 0.6883345246315002)]
+
+rozwód: 
+[('przez_rozwód', 0.7622022032737732),
+('małżeństwo', 0.7000465989112854),
+('małżeństwo_zostało_rozwiązane', 0.6829931735992432)]
+
+
+Sąd Najwyższy - kpc + konstytucja:
+[('Sad_Najwyższy', 0.6018779873847961),
+('Europejski_Trybunał_Sprawiedliwości', 0.5833577513694763),
+('Trybunał_wielokrotnie', 0.5785167813301086),
+('Europejski_Trybunał_Praw_Człowieka', 0.5685355067253113),
+('Trybunał_Sprawiedliwości_Unii_Europejskiej', 0.5683681964874268)]
+
+pasażer - mężczyzna + kobieta:
+[('pasażerka', 0.7532357573509216),
+('kierująca', 0.7313131093978882),
+('kierująca_pojazdem', 0.7132536768913269),
+('piesza', 0.7006282210350037),
+('pasażerowie', 0.6939754486083984)]
+
+samochód - droga + rzeka:
+[('samochód_marki', 0.6220711469650269),
+('Samochód_ten', 0.6122021675109863),
+('Samochód', 0.6095646023750305),
+('motorower', 0.6014969944953918),
+('zegarek', 0.600145161151886)]
