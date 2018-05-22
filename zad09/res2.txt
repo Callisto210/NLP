@@ -1,0 +1,76 @@
+Sąd_Najwyższy: 
+[('Sąd_Najwyższy,', 0.8103549480438232),
+('Naczelny_Sąd_Administracyjny', 0.7442763447761536),
+('Sad_Najwyższy', 0.742509126663208)]
+
+Trybunał_Konstytucyjny: 
+[('Trybunał', 0.945568859577179),
+('Trybunał_Konstytucyjny,', 0.8322622179985046),
+('Trybunał,', 0.8039156794548035)]
+
+kodeks_cywilny: 
+[('Kodeks_cywilny', 0.8309534788131714),
+('kodeks_pracy', 0.700291633605957),
+('powołany_przepis', 0.6932736039161682)]
+
+kpk: 
+[('k.p.k.', 0.9248042702674866),
+('kpk,', 0.9152218699455261),
+('k.p.k.,', 0.8896258473396301)]
+
+sąd_rejonowy: 
+[('sąd_meriti', 0.9262487292289734),
+('sąd_I_instancji', 0.9167134761810303),
+('Sąd_meriti', 0.9024856686592102)]
+
+szkoda: 
+[('szkoda_ta', 0.7971028089523315),
+('powstała_szkoda', 0.7751861810684204),
+('szkoda_majątkowa', 0.7609423995018005)]
+
+wypadek: 
+[('skutek', 0.5542692542076111),
+('przypadek', 0.5470921993255615),
+('wypadek,', 0.517776370048523)]
+
+kolizja: 
+[('awaria', 0.6929676532745361),
+('usterka', 0.6893819570541382),
+('szczelina', 0.6503886580467224)]
+
+szkoda_majątkowa: 
+[('szkoda', 0.7609423398971558),
+('szkoda_ta', 0.7596219778060913),
+('szkoda_niemajątkowa', 0.7408117651939392)]
+
+nieszczęście: 
+[('posunięcie,', 0.5729286670684814),
+('czwórkę_dzieci,', 0.5523626208305359),
+('ataki,', 0.551298975944519)]
+
+rozwód: 
+[('rozwód,', 0.8045260310173035),
+('rozwód.', 0.7602337598800659),
+('orzeczenie_rozwodu', 0.7103760242462158)]
+
+
+Sąd Najwyższy - kpc + konstytucja: 
+[('Sad_Najwyższy', 0.5838091373443604),
+('Europejski_Trybunał_Praw_Człowieka', 0.5708523988723755),
+('Trybunał_Sprawiedliwości', 0.5519598722457886),
+('Naczelny_Sąd_Administracyjny', 0.5502753257751465),
+('Orzecznictwo_Sądu_Najwyższego', 0.5497504472732544)]
+
+pasażer - mężczyzna + kobieta: 
+[('pasażerka', 0.7491812705993652),
+('kierująca', 0.7097944021224976),
+('piesza', 0.7023035287857056),
+('kierująca_pojazdem', 0.6884594559669495),
+('rowerzystka', 0.6593507528305054)]
+
+samochód - droga + rzeka: 
+[('samochód_osobowy', 0.6358345746994019),
+('samochód_marki', 0.6309425830841064),
+('ciągnik_siodłowy', 0.6244173049926758),
+('samochód_osobowy_marki', 0.6201815605163574),
+('samochód_ciężarowy_marki', 0.6050379872322083)]
