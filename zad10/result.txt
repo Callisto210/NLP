@@ -1,0 +1,34 @@
+Mirosław_Granat646
+Beata_Gudowska523
+Andrzej_Wróbel652
+Józef_Iwulski704
+Barbara_Myszka578
+Marek_Zubik653
+Andrzej_Rzepliński759
+Zbigniew_Cieślak654
+Wojciech_Hermeliński724
+Marian_Kocon567
+Henryk_Pietrzkowski533
+Stanisław_Biernat507
+Piotr_Tuleja607
+Zbigniew_Myszka523
+Marek_Kotlinowski518
+Maria_Gintowt-Jankowicz528
+Hubert_Wrzeszcz948
+Jerzy_Kwaśniewski517
+Teresa_Bielska-Sobkowicz700
+Zbigniew_Kwaśniewski515
+Sławomira_Wronkowska-Jaśkiewicz575
+Krzysztof_Strzelczyk535
+
+Read 26M words
+Number of words:  514567
+Number of labels: 22
+Progress: 100.0%  words/sec/thread: 893258  lr: 0.000000  loss: 1.318155  eta: 0h0m h-14m 
+
+
+N       3351
+P@1     0.428
+R@1     0.428
+Number of examples: 3351
+
